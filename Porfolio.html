@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Oyiza Salawu | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#bc88fc",
+                "background-light": "#f7f5f8",
+                "background-dark": "#121212",
+                "surface": "#1e1e1e",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation Bar -->
+<nav class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 p-4 justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined font-bold">analytics</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Oyiza.Data</h2>
+</div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#home">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a></div>
+<div class="flex items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="flex md:p-12 @container items-center justify-center min-h-[60vh] px-6 pb-6 pt-2" id="home">
+<div class="flex w-full max-w-4xl flex-col md:flex-row gap-8 items-center">
+<div class="flex-shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-48 w-48 border-4 border-primary/20 p-2" data-alt="Professional portrait of Oyiza Salawu, Data Analyst" style='background-image: url("profile.jpg")'>
+</div>
+</div>
+<div class="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
+<div class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase">Available for hire</div>
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">Oyiza Salawu</h1>
+<p class="text-primary text-xl font-semibold leading-normal">Data Scientist / Analyst</p>
+<p class="text-slate-600 dark:text-slate-400 text-lg max-w-md leading-relaxed">
+                        Recent graduate from University of Lagos, specialized in data analysis. Turning raw data into actionable insights using SQL, Python, and advanced analytics.
+                    </p>
+<div class="flex gap-4 pt-4">
+<a class="bg-primary text-background-dark px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity" href="#contact">Get in touch</a>
+<button class="border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">View CV</button>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="bg-slate-50 dark:bg-slate-900/50 px-6 py-10" id="about">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">person</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight">About Me</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+<p>I am a recent graduate from the University of Lagos with a passion for data analysis and insights. I specialize in transforming complex datasets into clear, actionable business intelligence.</p>
+<p>
+                            I'm actively enhancing my skills through industry-recognized certifications including the Google Data Analysis Professional Certificate, DataCamp SQL Associate, and Data Analysis Associate. My expertise spans Excel, SQL, Python, data visualization, and statistical analysis.
+                        </p>
+</div>
+<div class="bg-white dark:bg-surface p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<h3 class="text-slate-900 dark:text-slate-100 font-bold mb-4">Education & Certifications</h3>
+<ul class="space-y-3 text-sm">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm flex-shrink-0 mt-0.5">check_circle</span>
+<span>B.sc. University of Lagos</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm flex-shrink-0 mt-0.5">check_circle</span>
+<span>Google Data Analysis Professional Certificate - Coursera</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm flex-shrink-0 mt-0.5">check_circle</span>
+<span>DataCamp SQL Associate</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm flex-shrink-0 mt-0.5">check_circle</span>
+<span>DataCamp Data Analysis Associate</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Skills Section -->
+<section class="py-16 px-6" id="skills">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-center gap-3 mb-10">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight">Technical Proficiency</h2>
+</div>
+<div class="grid gap-8">
+<!-- Python -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="font-bold">Python (Pandas, NumPy, Matplotlib)</span>
+<span class="text-primary font-bold">90%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 skill-bar">
+<div class="bg-primary h-full rounded-full" style="width: 90%;"></div>
+</div>
+</div>
+<!-- SQL -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="font-bold">SQL (Queries, Data Extraction, Analysis)</span>
+<span class="text-primary font-bold">88%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 skill-bar">
+<div class="bg-primary h-full rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+<!-- Excel -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="font-bold">MS Excel (Pivot Tables, Advanced Formulas)</span>
+<span class="text-primary font-bold">92%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 skill-bar">
+<div class="bg-primary h-full rounded-full" style="width: 92%;"></div>
+</div>
+</div>
+<!-- Visualization -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="font-bold">Data Visualization (Charts, Dashboards, Insights)</span>
+<span class="text-primary font-bold">85%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 skill-bar">
+<div class="bg-primary h-full rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Statistics -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="font-bold">Statistics & Data Analysis</span>
+<span class="text-primary font-bold">87%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 skill-bar">
+<div class="bg-primary h-full rounded-full" style="width: 87%;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<div class="py-16 px-6" id="projects">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-center gap-3 mb-10">
+<span class="material-symbols-outlined text-primary">folder_open</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight">Featured Projects</h2>
+</div>
+<div class="space-y-6">
+<!-- Project 1: Metropolitan Medical Centre -->
+<div class="bg-white dark:bg-surface rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="p-6 md:p-8 flex flex-col md:flex-row gap-8">
+<div class="flex-1 space-y-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded-md bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Healthcare Analytics</span>
+<span class="px-2 py-1 rounded-md bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Process Optimization</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Metropolitan Medical Centre - Wait Time Analysis</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Conducted a comprehensive analysis of patient wait times in the emergency department using SQL and Python. Analyzed over 10,000 patient records to identify bottlenecks and peak times. Developed visualizations and statistical models that led to recommendations for improved staff scheduling and patient flow management.
+                        </p>
+<div class="flex gap-4 pt-2">
+<button class="flex items-center gap-2 text-sm font-bold text-primary hover:underline">
+<span class="material-symbols-outlined text-sm">visibility</span>
+View Analysis
+</button>
+</div>
+</div>
+<div class="flex-1">
+<div class="aspect-video rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-6xl text-slate-300 dark:text-slate-700">bar_chart</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><section class="py-16 px-6 bg-slate-50 dark:bg-slate-900/50" id="contact">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-center gap-3 mb-10">
+<span class="material-symbols-outlined text-primary">alternate_email</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight">Let's Connect</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<p class="text-slate-600 dark:text-slate-400">
+                            I'm always open to discussing new data science opportunities, research collaborations, or speaking engagements.
+                        </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold">Phone</p>
+<p class="text-slate-900 dark:text-slate-100 font-medium">+234 708 139 4465</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold">Email</p>
+<p class="text-slate-900 dark:text-slate-100 font-medium">salauoyiza2019@gmail.com</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold">Location</p>
+<p class="text-slate-900 dark:text-slate-100 font-medium" data-location="Lagos, Nigeria">Lagos, Nigeria</p>
+</div>
+</div>
+</div>
+</div>
+<form class="space-y-4">
+<input class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Your Name" type="text"/>
+<input class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Your Email" type="email"/>
+<textarea class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Your Message" rows="4"></textarea>
+<button class="w-full bg-primary text-background-dark font-bold py-3 rounded-lg hover:opacity-90 transition-opacity" type="button">Send Message</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer / Bottom Navigation -->
+<footer class="mt-auto">
+<div class="flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-surface px-4 pb-6 pt-3 md:hidden">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#home">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="about.html">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium">About</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#skills">
+<span class="material-symbols-outlined">monitoring</span>
+<p class="text-[10px] font-medium">Skills</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="projects.html">
+<span class="material-symbols-outlined">folder_open</span>
+<p class="text-[10px] font-medium">Projects</p>
+</a><a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#contact">
+<span class="material-symbols-outlined">mail</span>
+<p class="text-[10px] font-medium">Contact</p>
+</a>
+</div>
+<div class="hidden md:block py-8 border-t border-slate-200 dark:border-slate-800 text-center text-sm text-slate-500">
+                © 2024 Oyiza Salawu. Built for insights.
+            </div>
+</footer>
+</div>
+</body></html>
