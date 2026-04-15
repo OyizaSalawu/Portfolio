@@ -10,7 +10,8 @@
             rel="stylesheet"
         />
         <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            href="
+            https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
             rel="stylesheet"
         />
         <script id="tailwind-config">
@@ -66,12 +67,30 @@
                 </div>
                 <div class="flex items-center justify-end">
                     <button
+                        id="menu-btn"
                         class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100"
                     >
                         <span class="material-symbols-outlined">menu</span>
                     </button>
                 </div>
             </nav>
+
+            <!-- Mobile Menu -->
+            <div
+                id="mobile-menu"
+                class="hidden md:hidden bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 p-4"
+            >
+                <div class="flex flex-col gap-4">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="text-sm font-medium text-primary transition-colors" href="about.html">About</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="projects.html"
+                        >Projects</a
+                    >
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#contact"
+                        >Contact</a
+                    >
+                </div>
+            </div>
 
             <!-- Main Content -->
             <div class="flex-1">
@@ -90,24 +109,31 @@
                     <div class="max-w-4xl mx-auto space-y-8">
                         <div class="grid md:grid-cols-2 gap-8">
                             <div>
-                                <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">Who I Am</h2>
+                                <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">About Me</h2>
                                 <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
                                     My name is Oyiza Salawu, a recent graduate from the University of Lagos with a
-                                    strong passion for data analysis and insights. I believe that data tells stories,
-                                    and I'm dedicated to uncovering those stories to help organizations make informed
-                                    decisions.
+                                    background in Cell Biology and Genetics and a strong passion for data analysis and
+                                    insights. While my academic training is rooted in the life sciences, it laid the
+                                    foundation for my transition into data science.
                                 </p>
                                 <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                                    Throughout my academic journey and beyond, I've developed hands-on expertise in
-                                    transforming complex, unstructured data into clear, actionable business
-                                    intelligence. My analytical mindset combined with technical skills allows me to
-                                    approach challenges systematically and deliver meaningful solutions.
+                                    Both biology and data analysis share a common core — asking the right questions,
+                                    identifying patterns, and drawing meaningful conclusions from complex data. Whether
+                                    working with genetic information or business datasets, I am driven by the same goal:
+                                    to uncover insights and tell clear, impactful stories.
+                                </p>
+                                <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                                    I believe that data tells stories, and I am dedicated to transforming complex,
+                                    unstructured data into actionable insights that support informed decision-making. My
+                                    analytical mindset, combined with technical skills in tools like Python, Excel, and
+                                    data visualization, allows me to approach problems systematically and deliver
+                                    meaningful solutions.
                                 </p>
                                 <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-                                    Currently, I'm on an exciting path of continuous learning, pursuing
-                                    industry-recognized certifications while building a portfolio of real-world data
-                                    analysis projects. I'm passionate about leveraging data to drive growth and improve
-                                    decision-making processes.
+                                    Currently, I am continuously learning and building a portfolio of real-world
+                                    projects, further strengthening my skills and deepening my understanding of
+                                    data-driven problem solving. I am passionate about using data to drive growth,
+                                    improve decision-making, and create value.
                                 </p>
                             </div>
                             <div>
@@ -198,6 +224,15 @@
                                         </h3>
                                         <p class="text-primary font-semibold text-sm">Coursera Certificate</p>
                                         <p class="text-slate-600 dark:text-slate-400 text-sm">2026</p>
+                                        <a
+                                            href="oyiza-google-data-analysis-certificate.pdf"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            class="inline-flex items-center gap-2 mt-3 text-primary font-semibold hover:underline"
+                                        >
+                                            <span class="material-symbols-outlined">check_circle</span>
+                                            View certificate
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -236,6 +271,15 @@
                                         </h3>
                                         <p class="text-primary font-semibold text-sm">DataCamp Certification</p>
                                         <p class="text-slate-600 dark:text-slate-400 text-sm">2026</p>
+                                        <a
+                                            href="oyiza-datacamp-data-analysis-associate-certificate.jpg"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            class="inline-flex items-center gap-2 mt-3 text-primary font-semibold hover:underline"
+                                        >
+                                            <span class="material-symbols-outlined">check_circle</span>
+                                            View certificate
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -361,4 +405,23 @@
             </footer>
         </div>
     </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+                });
+
+                // Close menu when a link is clicked
+                document.querySelectorAll("#mobile-menu a").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.add("hidden");
+                    });
+                });
+            }
+        });
+    </script>
 </html>

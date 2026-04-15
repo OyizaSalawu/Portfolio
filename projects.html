@@ -64,12 +64,28 @@
                 </div>
                 <div class="flex items-center justify-end">
                     <button
+                        id="menu-btn"
                         class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100"
                     >
                         <span class="material-symbols-outlined">menu</span>
                     </button>
                 </div>
             </nav>
+
+            <!-- Mobile Menu -->
+            <div
+                id="mobile-menu"
+                class="hidden md:hidden bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 p-4"
+            >
+                <div class="flex flex-col gap-4">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+                    <a class="text-sm font-medium text-primary transition-colors" href="projects.html">Projects</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#contact"
+                        >Contact</a
+                    >
+                </div>
+            </div>
 
             <!-- Main Content -->
             <div class="flex-1">
@@ -93,119 +109,216 @@
                             <div class="grid md:grid-cols-2 gap-0">
                                 <!-- Left Content -->
                                 <div class="p-8 flex flex-col justify-center">
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span
-                                            class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
-                                            >Healthcare</span
-                                        >
-                                        <span
-                                            class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
-                                            >Analytics</span
-                                        >
-                                        <span
-                                            class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
-                                            >SQL & Python</span
-                                        >
-                                    </div>
-                                    <h3 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">
-                                        Metropolitan Medical Centre
-                                    </h3>
-                                    <h4 class="text-primary font-bold text-lg mb-3">
-                                        Operational efficiency and reduce healthcare cost
-                                    </h4>
-                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                                        Analysis done to strategically analyze patient admission data to improve
-                                        clinical outcomes and reduce healthcare costs. The initiative supports
-                                        data-driven decision making to enhance operational efficiency and strengthen
-                                        overall hospital performance.
-                                    </p>
-                                    <div class="space-y-2 mb-6">
-                                        <p class="text-sm text-slate-600 dark:text-slate-400">
-                                            <strong>Objective:</strong> Reduce patient wait times and improve ED
-                                            efficiency
-                                        </p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400">
-                                            <strong>Data Size:</strong> 200+ patient records
-                                        </p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400">
-                                            <strong>Tools Used:</strong> SQL, Excel
-                                        </p>
-                                        <p class="text-sm text-slate-600 dark:text-slate-400">
-                                            <strong>Timeline:</strong> 8 weeks
-                                        </p>
-                                    </div>
-                                    <div class="mb-6">
-                                        <h5 class="font-bold text-slate-900 dark:text-slate-100 mb-2">Key Insights:</h5>
-                                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                                            <li class="flex items-start gap-2">
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
-                                                    >check_circle</span
-                                                >
-                                                <span
-                                                    >Peak arrival times occur between 8-10 AM with 40% of daily
-                                                    volume</span
-                                                >
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
-                                                    >check_circle</span
-                                                >
-                                                <span
-                                                    >Triage process is the primary bottleneck, averaging 25 minutes per
-                                                    patient</span
-                                                >
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
-                                                    >check_circle</span
-                                                >
-                                                <span
-                                                    >Advanced cases require 60% longer wait times than routine
-                                                    cases</span
-                                                >
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
-                                                    >check_circle</span
-                                                >
-                                                <span>Staffing optimization can reduce wait times by 15-20%</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="flex gap-4">
-                                        <a
-                                            class="flex items-center gap-2 px-4 py-2 bg-primary text-background-dark rounded-lg font-bold hover:opacity-90 transition-opacity text-sm"
-                                            href="https://docs.google.com/presentation/d/1xwcfNeW7w5IjRYruWw4mR6yxqB1YZK22QtkrDukJyCA/edit?usp=sharing"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <span class="material-symbols-outlined text-base">visibility</span>
-                                            View Presentation
-                                        </a>
+                                    <!-- Tabs -->
+                                    <div class="flex gap-2 mb-6 border-b border-slate-200 dark:border-slate-700">
                                         <button
-                                            class="flex items-center gap-2 px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-sm"
+                                            onclick="switchTab('excel')"
+                                            id="excel-tab"
+                                            class="pb-3 px-4 font-bold text-primary border-b-2 border-primary transition-colors"
                                         >
-                                            <span class="material-symbols-outlined text-base">code</span>
-                                            View Code
+                                            Excel Analysis
                                         </button>
+                                        <button
+                                            onclick="switchTab('python')"
+                                            id="python-tab"
+                                            class="pb-3 px-4 font-bold text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 border-b-2 border-transparent transition-colors"
+                                        >
+                                            Python Analysis
+                                        </button>
+                                    </div>
+
+                                    <!-- Excel Content -->
+                                    <div id="excel-content" class="space-y-4">
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            <span
+                                                class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
+                                                >Healthcare</span
+                                            >
+                                            <span
+                                                class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
+                                                >Analytics</span
+                                            >
+                                            <span
+                                                class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
+                                                >Excel</span
+                                            >
+                                        </div>
+                                        <h3 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+                                            Metropolitan Medical Centre
+                                        </h3>
+                                        <h4 class="text-primary font-bold text-lg mb-3">
+                                            Operational efficiency and reduce healthcare cost
+                                        </h4>
+                                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4 text-sm">
+                                            Analysis done to strategically analyze patient admission data to improve
+                                            clinical outcomes and reduce healthcare costs. The initiative supports
+                                            data-driven decision making to enhance operational efficiency and strengthen
+                                            overall hospital performance.
+                                        </p>
+                                        <div class="space-y-2 mb-6">
+                                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                                <strong>Objective:</strong> Reduce patient wait times and improve ED
+                                                efficiency
+                                            </p>
+                                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                                <strong>Data Size:</strong> 200+ patient records
+                                            </p>
+                                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                                <strong>Tools Used:</strong> Excel and Python
+                                            </p>
+                                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                                <strong>Timeline:</strong> 2 years
+                                            </p>
+                                        </div>
+                                        <div class="mb-6">
+                                            <h5 class="font-bold text-slate-900 dark:text-slate-100 mb-2">
+                                                Key Insights:
+                                            </h5>
+                                            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                                <li class="flex items-start gap-2">
+                                                    <span
+                                                        class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
+                                                        >check_circle</span
+                                                    >
+                                                    <span
+                                                        >Length of Stay: Confirmed as the #1 driver of total hospital
+                                                        charges across all departments.</span
+                                                    >
+                                                </li>
+                                                <li class="flex items-start gap-2">
+                                                    <span
+                                                        class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
+                                                        >check_circle</span
+                                                    >
+                                                    <span
+                                                        >Emergency Admissions: Result in 35% higher average charges and
+                                                        significantly longer wait times compared to elective
+                                                        admissions.</span
+                                                    >
+                                                </li>
+                                                <li class="flex items-start gap-2">
+                                                    <span
+                                                        class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
+                                                        >check_circle</span
+                                                    >
+                                                    <span
+                                                        >Insurance Coverage: Medicaid and Medicare patients saw the
+                                                        highest average out-of-pocket costs in specialized surgical
+                                                        departments.</span
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <a
+                                                class="flex items-center gap-2 px-4 py-2 bg-primary text-background-dark rounded-lg font-bold hover:opacity-90 transition-opacity text-sm"
+                                                href="https://docs.google.com/presentation/d/1xwcfNeW7w5IjRYruWw4mR6yxqB1YZK22QtkrDukJyCA/edit?usp=sharing"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <span class="material-symbols-outlined text-base">visibility</span>
+                                                View Presentation
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Python Content -->
+                                    <div id="python-content" class="space-y-4 hidden">
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            <span
+                                                class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
+                                                >Healthcare</span
+                                            >
+                                            <span
+                                                class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
+                                                >Analytics</span
+                                            >
+                                            <span
+                                                class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
+                                                >Python</span
+                                            >
+                                        </div>
+                                        <h3 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+                                            Metropolitan Medical Centre
+                                        </h3>
+                                        <h4 class="text-primary font-bold text-lg mb-3">
+                                            Advanced statistical analysis and predictive modeling
+                                        </h4>
+                                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4 text-sm">
+                                            Comprehensive Python-based analysis using Pandas, NumPy, and Matplotlib to
+                                            perform advanced statistical testing and create interactive visualizations
+                                            of patient admission patterns and hospital performance metrics.
+                                        </p>
+                                        <div class="space-y-2 mb-6">
+                                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                                <strong>Objective:</strong> Deep-dive statistical analysis and pattern
+                                                recognition
+                                            </p>
+                                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                                <strong>Data Size:</strong> 200+ patient records
+                                            </p>
+                                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                                <strong>Tools Used:</strong> Excel and Python
+                                            </p>
+                                            <p class="text-sm text-slate-600 dark:text-slate-400">
+                                                <strong>Status:</strong> In Progress
+                                            </p>
+                                        </div>
+                                        <div class="mb-6">
+                                            <h5 class="font-bold text-slate-900 dark:text-slate-100 mb-2">
+                                                Analysis Focus:
+                                            </h5>
+                                            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                                <li class="flex items-start gap-2">
+                                                    <span
+                                                        class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
+                                                        >check_circle</span
+                                                    >
+                                                    <span
+                                                        >Statistical hypothesis testing on admission types and
+                                                        charges</span
+                                                    >
+                                                </li>
+                                                <li class="flex items-start gap-2">
+                                                    <span
+                                                        class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
+                                                        >check_circle</span
+                                                    >
+                                                    <span
+                                                        >Correlation analysis between length of stay and total
+                                                        charges</span
+                                                    >
+                                                </li>
+                                                <li class="flex items-start gap-2">
+                                                    <span
+                                                        class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5"
+                                                        >check_circle</span
+                                                    >
+                                                    <span>Advanced data visualization and trend analysis</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <a
+                                                class="flex items-center gap-2 px-4 py-2 bg-primary text-background-dark rounded-lg font-bold hover:opacity-90 transition-opacity text-sm disabled opacity-50 cursor-not-allowed"
+                                                href="#"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <span class="material-symbols-outlined text-base">code</span>
+                                                View Code (Coming Soon)
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Right Visualization -->
                                 <div
-                                    class="bg-gradient-to-br from-primary/20 to-primary/5 p-8 flex items-center justify-center"
+                                    class="bg-gradient-to-br from-primary/20 to-primary/5 p-8 flex items-center justify-center overflow-hidden"
                                 >
-                                    <div class="text-center">
-                                        <span class="material-symbols-outlined text-primary text-8xl mb-4 block"
-                                            >bar_chart</span
-                                        >
-                                        <p class="text-slate-600 dark:text-slate-400 font-medium">
-                                            Patient Flow Analysis
-                                        </p>
-                                    </div>
+                                    <img
+                                        src="medical-healthcare.jpg"
+                                        alt="Healthcare Data Analysis"
+                                        class="w-full h-full object-cover rounded-lg"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -303,4 +416,55 @@
             </footer>
         </div>
     </body>
+    <script>
+        function switchTab(tab) {
+            // Hide all content
+            document.getElementById("excel-content").classList.add("hidden");
+            document.getElementById("python-content").classList.add("hidden");
+
+            // Remove active styling from all tabs
+            document.getElementById("excel-tab").classList.remove("text-primary", "border-primary");
+            document.getElementById("python-tab").classList.remove("text-primary", "border-primary");
+
+            document
+            .getElementById("excel-tab")
+            .classList.add("text-slate-500", "dark:text-slate-400", "border-transparent");
+            document
+            .getElementById("python-tab")
+            .classList.add("text-slate-500", "dark:text-slate-400", "border-transparent");
+
+            // Show selected content and activate tab
+            if (tab === "excel") {
+                document.getElementById("excel-content").classList.remove("hidden");
+                document.getElementById("excel-tab").classList.add("text-primary", "border-primary");
+                document
+                .getElementById("excel-tab")
+                .classList.remove("text-slate-500", "dark:text-slate-400", "border-transparent");
+            } else if (tab === "python") {
+                document.getElementById("python-content").classList.remove("hidden");
+                document.getElementById("python-tab").classList.add("text-primary", "border-primary");
+                document
+                .getElementById("python-tab")
+                .classList.remove("text-slate-500", "dark:text-slate-400", "border-transparent");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+                });
+
+                // Close menu when a link is clicked
+                document.querySelectorAll("#mobile-menu a").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.add("hidden");
+                    });
+                });
+            }
+        });
+    </script>
 </html>

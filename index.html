@@ -59,16 +59,37 @@
 <a class="text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a></div>
 <div class="flex items-center justify-end">
-<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100">
+<button id="menu-btn" class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 </nav>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 p-4">
+<div class="flex flex-col gap-4">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#home">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 p-4">
+<div class="flex flex-col gap-4">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#home">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+</div>
+</div>
 <!-- Hero Section -->
 <section class="flex md:p-12 @container items-center justify-center min-h-[60vh] px-6 pb-6 pt-2" id="home">
 <div class="flex w-full max-w-4xl flex-col md:flex-row gap-8 items-center">
 <div class="flex-shrink-0">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-48 w-48 border-4 border-primary/20 p-2" data-alt="Professional portrait of Oyiza Salawu, Data Analyst" style='background-image: url("profile.jpg")'>
+<div class="h-96 w-96 rounded-full overflow-hidden bg-slate-100">
+<img src="oyiza.jpg" alt="Professional portrait of Oyiza Salawu, Data Analyst" class="h-full w-full object-cover rounded-full" style="object-position: center 35%;" />
 </div>
 </div>
 <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
@@ -76,7 +97,7 @@
 <h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">Oyiza Salawu</h1>
 <p class="text-primary text-xl font-semibold leading-normal">Data Scientist / Analyst</p>
 <p class="text-slate-600 dark:text-slate-400 text-lg max-w-md leading-relaxed">
-                        Recent graduate from University of Lagos, specialized in data analysis. Turning raw data into actionable insights using SQL, Python, and advanced analytics.
+                        I'm a data analyst focused on turning raw data into clear, actionable insights. I am skilled at uncovering patterns, solving problems, and using data to tell meaningful stories.
                     </p>
 <div class="flex gap-4 pt-4">
 <a class="bg-primary text-background-dark px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity" href="#contact">Get in touch</a>
@@ -297,4 +318,23 @@ View Presentation
             </div>
 </footer>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+});
+</script>
 </body></html>
