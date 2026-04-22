@@ -101,7 +101,13 @@
                     </p>
 <div class="flex gap-4 pt-4">
 <a class="bg-primary text-background-dark px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity" href="#contact">Get in touch</a>
-<button class="border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">View CV</button>
+<a 
+  href="Oyiza Salawu_Data_Analyst_Resume.pdf" 
+  target="_blank"
+  class="border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors inline-block"
+>
+  View Resume
+</a>
 </div>
 </div>
 </div>
@@ -233,9 +239,11 @@ View Presentation
 </div>
 </div>
 <div class="flex-1">
-<div class="aspect-video rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700">
-<span class="material-symbols-outlined text-6xl text-slate-300 dark:text-slate-700">bar_chart</span>
-</div>
+  <img 
+    src="medical-healthcare.jpg" 
+    alt="Metropolitan Medical Centre Dashboard"
+    class="w-full aspect-video object-cover rounded-lg border border-slate-200 dark:border-slate-700 hover:scale-[1.02] transition-transform duration-300"
+  />
 </div>
 </div>
 </div>
@@ -281,11 +289,44 @@ View Presentation
 </div>
 </div>
 </div>
-<form class="space-y-4">
-<input class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Your Name" type="text"/>
-<input class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Your Email" type="email"/>
-<textarea class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Your Message" rows="4"></textarea>
-<button class="w-full bg-primary text-background-dark font-bold py-3 rounded-lg hover:opacity-90 transition-opacity" type="button">Send Message</button>
+<form id="contact-form" action="https://formspree.io/f/mkokvdgo" method="POST" class="space-y-4">
+  
+  <input type="hidden" name="_next" value="http://localhost:3000/#contact">
+
+  <input 
+    name="name"
+    type="text"
+    placeholder="Your Name"
+    class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+    required
+  />
+
+  <input 
+    name="email"
+    type="email"
+    placeholder="Your Email"
+    class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+    required
+  />
+
+  <textarea 
+    name="message"
+    placeholder="Your Message"
+    rows="4"
+    class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+    required
+  ></textarea>
+
+  <button 
+    type="submit"
+    class="w-full bg-primary text-background-dark font-bold py-3 rounded-lg hover:opacity-90 transition-opacity"
+  >
+    Send Message
+  </button>
+  <p id="form-status" class="text-green-500 text-sm font-medium hidden">
+    Message sent successfully ✅
+  </p>
+
 </form>
 </div>
 </div>
@@ -335,6 +376,41 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+});
+</script>
+<script>
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      status.classList.remove("hidden");
+      form.reset();
+
+      // hide after 3 seconds
+      setTimeout(() => {
+        status.classList.add("hidden");
+}, 3000);
+    } else {
+      status.textContent = "Oops! Something went wrong.";
+      status.classList.remove("hidden");
+    }
+
+  } catch (error) {
+    status.textContent = "Network error. Try again.";
+    status.classList.remove("hidden");
+  }
 });
 </script>
 </body></html>
